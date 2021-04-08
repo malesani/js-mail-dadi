@@ -20,7 +20,7 @@ document.getElementById("computer").innerHTML="il numero del computer è " + num
 
 if(num_utente > num_computer){
   var resultado = "hai vinto" ;
-}if (num_utente == num_computer){
+}else if (num_utente == num_computer){
   var resultado = "pareggio";
 }else{ 
   var resultado = "hai perso"
