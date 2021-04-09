@@ -1,30 +1,29 @@
-/* chiedere mail */
-var search = prompt ("inserire la tua mail")
+/* stard game */
+var stard = prompt ("digita ok per iniziare a giocare")
+console.log(stard)
 
-console.log (search)
-
-/* controlo mail */
-var mails = [
-  "alejandroMalesani@hotmail.com",
-  "alejandro_malesani@hotmail.com", 
-  "pablo@hotmail.com",
-  "javier@hotmail.com",
-  "ronald@hotmail.com",
-]
-
-var ok = false;
-
-for (var i = 0; i < mails.length; i++){
-  var mail = mails[i]
-  console.log(i)
-  if(mail === search){
-    ok = true
-  }
+/* numero utente */
+if(stard == "ok"){
+  var num_utente = Math.floor(Math.random() * 6) + 1;
+}else{
+  alert ("prova di nuovo")
 }
+console.log(num_utente)
+
+/* numero computer */
+var num_computer = Math.floor(Math.random() * 6) + 1;
+console.log(num_computer)
 
 /* stampa */
-if (ok == true){
-  document.getElementById("mail-si-no").innerHTML=" La mail è registrata";
-}else{
-  document.getElementById("mail-si-no").innerHTML="la mail non è stata registrata";
+document.getElementById("utente").innerHTML="il tuo numero è " + num_utente;
+document.getElementById("computer").innerHTML="il numero del computer è " + num_computer;
+
+if(num_utente > num_computer){
+  var resultado = "hai vinto" ;
+}else if (num_utente == num_computer){
+  var resultado = "pareggio";
+}else{ 
+  var resultado = "hai perso"
 }
+
+document.getElementById("vincitore").innerHTML  = resultado;
